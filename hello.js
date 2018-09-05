@@ -10,5 +10,3 @@ http.createServer(function(request, response) {
     response.write(html);
     response.end();
 }).listen(8080);
-
-test
