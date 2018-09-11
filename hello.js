@@ -38,7 +38,39 @@ http.createServer(function(req, res) {
             + "</body>"
             + "</html>";
   res.write(html);
-  res.end();
+  
+  setTimeout(function(){
+    let newhtml = "<html>"
+            + "<head>"
+            + "<style>"
+            + "body {"
+            + "font-family: Georgia, serif;"
+            + "font-size: 1.25em;"
+            + "background-color: #FDF3E7;"
+            +  "}"
+            + ".indent {"
+            + "text-indent: 2em;"
+            + "}"
+            + ".center {"
+            + "text-align: center;"
+            + "margin: 25px;"
+            + "font-weight: bold;"
+            + "}"
+            + "ul li {"
+            + "padding: .25em;"
+            + "margin:10px 0;"
+            + "}"
+            + "</style>"
+            + "<title> Hello from Dog</title>"
+            + "</head>"
+            + "<body>"
+            + "<p></p>"
+            + "<p class=\"center\"> Hi Dog, Nice to meet you.</p>"
+            + "</body>"
+            + "</html>";
+    res.write(newhtml);
+    res.end();
+  }, 5000);
 }).listen(8080, (err) => {
   if(err){
      console.log(err);
